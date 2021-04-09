@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Assignment</title>
+</head>
+<body ng-app="myApp">
+    <script type="text/ng-template" id="pages/f1.html">
+      <div ng-hide="F1">
+        <form action="">
+            <h1>Student Details</h1>
+            <div class="form-group">
+                <label class="text" for=""><b>Name</b></label>
+                <input type="text" name="name" class="form-control" id="" placeholder="eg.Dixan Lal Thomas" ng-model="name" required minlength="4"  >
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Roll No.</label>
+                <input type="text" name="rollno" class="form-control" id="" placeholder="eg.MCA123" ng-model="rollno"required>
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Email</label>
+                <input type="text" name="mail" class="form-control" id="" placeholder="eg.abc123@mail.com" ng-model="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            </div>
+            <!-- <span>{{name}}</span> -->
+            <input class="btn" type="submit" value="Submit" ng-click="submit1()">
+        </form>
+      </div>
+        <div>
+          <br><br>
+        </div>
+        <div ng-hide="f1">
+          <form action="">
+            <label class="text" for=""><b>Name: </b></label><label class="text" for="">{{name}}</label><br><br>
+            <label class="text" for=""><b>Roll No: </b></label><label class="text" for="">{{rollno}}</label><br><br>
+            <label class="text" for=""><b>Email: </b></label><label class="text" for="">{{mail}}</label><br><br>
+          </form>
+        </div>
+      </script>
+  
+      <script type="text/ng-template" id="pages/f2.html">
+        <form action="" >
+            <h1>Academic Details</h1>
+            <div class="form-group">
+                <label class="text" for=""><b>MCA Marks</b></label><br><br>
+                <label class="text" for=""><b>Semester 1</b></label>
+                <input type="number" name="" class="form-control" id="" ng-model="s1" required>
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 2</label>
+                <input type="number" name="" class="form-control" id="" ng-model="s2" required>
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 3</label>
+                <input type="number" name="" class="form-control" id="" ng-model="s3" required>
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 4</label>
+                <input type="number" name="" class="form-control" id="" ng-model="s4" required>
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Aggregate : {{ (s1+s2+s3+s4)/4 }}</label>
+                <!-- <input type="number" name="" class="form-control" id="" required> -->
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Programing languages known:</label><br><br>
+                <input class="" type="checkbox" name="" class="form-control" id="" value="C" required><span class="checkmark">C</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" value="CPP" required><span class="checkmark">CPP</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" value="JAVA" required><span class="checkmark">JAVA</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" value="Python" required><span class="checkmark">Python</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" value="C#" required><span class="checkmark">C#</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" value="R" required><span class="checkmark">R</span>
+                
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Extra Cirricular Activities</label>
+                <input type="text" name="" class="form-control" id="" required>
+            </div>
+            <input class="btn" type="submit" value="Submit" >
+        </form>
+      </script>
+      
+      <script type="text/ng-template" id="pages/f3.html">
+        <form action="" >
+          <h1>Student Details</h1>
+          <div class="form-group">
+              <label class="text" for=""><b>Name: </b></label> <span>{{name}}</span>
+              <!-- <input type="text" name="" class="form-control" id="" placeholder="eg.Dixan Lal Thomas" required> -->
+          </div>
+          <div class="form-group">
+              <label class="text" for="">Roll No.</label>
+              <!-- <input type="text" name="" class="form-control" id="" placeholder="eg.MCA123" required> -->
+          </div>
+          <div class="form-group">
+              <label class="text" for="">Email</label>
+              <!-- <input type="text" name="" class="form-control" id="" placeholder="eg.abc123@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> -->
+          </div>
+          <!-- <input class="btn" type="submit" value="Submit"> -->
+        </form>
+        <div>
+          <br><br>
+        </div>
+        <form action="" >
+            <h1>Academic Details</h1>
+            <div class="form-group">
+                <label class="text" for=""><b>MCA Marks</b></label><br><br>
+                <label class="text" for=""><b>Semester 1</b></label>
+                <!-- <input type="number" name="" class="form-control" id="" ng-model="s1" required> -->
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 2</label>
+                <!-- <input type="number" name="" class="form-control" id="" ng-model="s2" required> -->
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 3</label>
+                <!-- <input type="number" name="" class="form-control" id="" ng-model="s3" required> -->
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 4</label>
+                <!-- <input type="number" name="" class="form-control" id="" ng-model="s4" required> -->
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Aggregate : {{ (s1+s2+s3+s4)/4 }}</label>
+                <!-- <input type="number" name="" class="form-control" id="" required> -->
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Programing languages known:</label><br><br>
+                
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Extra Cirricular Activities</label>
+                <!-- <input type="text" name="" class="form-control" id="" required> -->
+            </div>
+            <!-- <input class="btn" type="button" value="Submit" > -->
+          </form>
+      </script>
+
+      <div class="container2">
+        <a href="#/" class="btnn">Student Details</a>
+        <a href="#/f2">Academic Details</a>
+        <!-- <a href="#/f3">Details</a> -->
+
+        <div class="container3" ng-view>
+        
+        </div>
+      </div>
+
+
+<script>
+    var app = angular.module('myApp', ['ngRoute']);
+
+app.config(function($routeProvider) {
+  $routeProvider
+
+  .when('/', {
+    templateUrl : 'pages/f1.html',
+    controller  : 'F1Controller'
+  })
+
+  .when('/f2', {
+    templateUrl : 'pages/f2.html',
+    controller  : 'F2Controller'
+  })
+  
+  .when('/f3', {
+    templateUrl : 'pages/f3.html',
+    controller  : 'F3Controller'
+  })
+
+  .otherwise({redirectTo: '/'});
+});
+
+app.controller('F1Controller', function($scope) {
+  $scope.F1=false;
+  $scope.f1=true;
+  
+  // $scope.submit1 = function() {
+  //   // if($scope.name && $scope.rollno && $scope.mail)
+  //   {
+  //     $scope.f1=false;
+  //     $scope.F1=true;
+  //   }
+  // }
+});
+
+app.controller('F2Controller', function($scope) {
+    // $scope.s1=100;
+    // $scope.s2=100;
+    // $scope.s3=100;
+    // $scope.s4=100;
+  // $scope.avg = $scope.s1+$scope.s2+$scope.s3+$scope.s4;
+});
+
+app.controller('F3Controller', function($scope) {
+  $scope.message = 'Hello from AboutController';
+});
+
+    </script>
+        
+</body>
+</html>
